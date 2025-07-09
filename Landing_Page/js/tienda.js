@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             productCards.forEach(card => {
                 if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                    card.style.display = 'block';
+                    card.style.display = 'flex';
                     card.style.animation = 'fadeIn 0.5s ease';
                 } else {
                     card.style.display = 'none';

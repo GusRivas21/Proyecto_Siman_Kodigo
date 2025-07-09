@@ -436,8 +436,8 @@ footer .footer-content {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 .product-card {
@@ -447,32 +447,41 @@ footer .footer-content {
     transition: transform 0.3s ease;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    height: 180px;
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 }
 
 .product-card img {
-    width: 100%;
-    height: 250px;
+    width: 250px;
+    height: 100%;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
 .product-info {
-    padding: 20px;
-    text-align: center;
+    padding: 20px 30px;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 
 .product-info h3 {
     color: white;
     margin-bottom: 10px;
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 .price {
     color: #4CAF50;
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: bold;
     margin-bottom: 15px;
 }
@@ -481,11 +490,12 @@ footer .footer-content {
     background: linear-gradient(135deg, #690505, #9f1414);
     color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 12px 30px;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: bold;
+    align-self: flex-start;
 }
 
 .add-to-cart:hover {
@@ -514,8 +524,8 @@ footer .footer-content {
 
 .offers-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 20px;
     margin-bottom: 60px;
 }
 
@@ -527,55 +537,67 @@ footer .footer-content {
     transition: transform 0.3s ease;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    height: 200px;
 }
 
 .offer-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
 }
 
 .discount-badge {
     position: absolute;
     top: 15px;
-    right: 15px;
+    left: 15px;
     background: #FF4444;
     color: white;
     padding: 8px 15px;
     border-radius: 20px;
     font-weight: bold;
     z-index: 2;
+    font-size: 1.1em;
 }
 
 .offer-card img {
-    width: 100%;
-    height: 250px;
+    width: 280px;
+    height: 100%;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
 .offer-info {
-    padding: 25px;
-    text-align: center;
+    padding: 25px 30px;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 
 .offer-info h3 {
     color: white;
     margin-bottom: 15px;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
 .price-container {
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .original-price {
     color: #888;
     text-decoration: line-through;
-    margin-right: 10px;
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 .sale-price {
     color: #4CAF50;
-    font-size: 1.6em;
+    font-size: 2em;
     font-weight: bold;
 }
 
@@ -583,18 +605,20 @@ footer .footer-content {
     color: #FFD700;
     font-weight: bold;
     margin-bottom: 20px;
+    font-size: 1.1em;
 }
 
 .buy-now {
     background: linear-gradient(135deg, #4CAF50, #45a049);
     color: white;
     border: none;
-    padding: 12px 30px;
+    padding: 12px 35px;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: bold;
     font-size: 1.1em;
+    align-self: flex-start;
 }
 
 .buy-now:hover {
@@ -670,5 +694,36 @@ footer .footer-content {
     
     .time-unit .number {
         font-size: 2em;
+    }
+    
+    /* Cards responsive para móvil */
+    .product-card, .offer-card {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+    
+    .product-card img, .offer-card img {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .product-info, .offer-info {
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .price-container {
+        justify-content: center;
+    }
+    
+    .add-to-cart, .buy-now {
+        align-self: center;
+    }
+    
+    .discount-badge {
+        top: 10px;
+        right: 10px;
+        left: auto;
     }
 }
