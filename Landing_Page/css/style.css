@@ -70,6 +70,17 @@ header {
     border-color: rgba(5, 5, 5, 0.4);
 }
 
+/* Estilos para navegación con enlaces */
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
 section {
     padding: 40px 20px;
     min-height: 400px;
@@ -82,7 +93,7 @@ section {
 
 .carousel-container {
     position: relative;
-    max-width: 100%;
+    max-width: 90%;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 20px;
@@ -206,12 +217,15 @@ section {
     position: relative;
     overflow: hidden;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-    max-width: 550px;
+    max-width: 450px;
     width: 100%;
+    height: 400px; /* Altura fija para todas las cards */
 }
 
-.box-img {
+.box-img, .box img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
     display: block;
     transition: transform 0.3s ease;
@@ -357,14 +371,304 @@ footer .footer-content {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* Responsive para footer */
-@media (max-width: 768px) {
-    footer .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+/* Estilos para páginas internas */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-    .social-icons {
+.page-header {
+    background: linear-gradient(135deg, #141414, #690505);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Estilos para la tienda */
+.products-section {
+    padding: 60px 0;
+}
+
+.filter-bar {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.filter-bar h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-info h3 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.price {
+    color: #4CAF50;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.add-to-cart {
+    background: linear-gradient(135deg, #690505, #9f1414);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.add-to-cart:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para ofertas */
+.offers-section {
+    padding: 60px 0;
+}
+
+.offer-banner {
+    background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+.offer-banner h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.offer-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.offer-card:hover {
+    transform: translateY(-8px);
+}
+
+.discount-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #FF4444;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.offer-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.offer-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.offer-info h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.price-container {
+    margin-bottom: 10px;
+}
+
+.original-price {
+    color: #888;
+    text-decoration: line-through;
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+.sale-price {
+    color: #4CAF50;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.offer-text {
+    color: #FFD700;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.buy-now {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.buy-now:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+/* Contador regresivo */
+.countdown-section {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.countdown-section h3 {
+    color: white;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.time-unit {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    min-width: 80px;
+    backdrop-filter: blur(10px);
+}
+
+.time-unit .number {
+    display: block;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.time-unit .label {
+    color: white;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2em;
+    }
+    
+    .filter-buttons {
         justify-content: center;
+    }
+    
+    .filter-btn {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+    
+    .countdown {
+        gap: 15px;
+    }
+    
+    .time-unit {
+        min-width: 60px;
+        padding: 15px;
+    }
+    
+    .time-unit .number {
+        font-size: 2em;
     }
 }
